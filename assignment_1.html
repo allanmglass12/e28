@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Assignment 1: Allan Glass</title>
+	<style>
+		a:link, a:visited {
+			color: blue;
+		}
+
+		a:hover, a:active {
+			color: red;
+		}
+
+		html {
+			font-family: Tahoma, Verdana, sans-serif;
+			font-size: 16px;
+			text-align: center;
+		}
+
+		div {
+			margin: auto;
+			width: 600px;
+			background-color: #EBEBEB;
+			border-top: 2px solid gray;
+			border-bottom: 2px solid gray;
+			margin-bottom: 30px;
+		}
+
+		h1, h2, h3, p {
+			margin-bottom: 20px;
+		}
+
+		#para {
+			text-align: left;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		form {
+			margin-left: 40px;
+			margin-right: 40px;
+			margin-bottom: 40px;
+		}
+
+	</style>
+	</head>
 <body>
-
-<h1>My First Heading</h1>
-<p>This is a paragraph.</p>
-<p>This TOO!</p>
-<p>This is another paragraph.</p>
-
+	<h1>Allan Glass</h1>
+	<h2>Assignment #1</h2>
+	<div>
+		<h3>My Name:</h3>
+		<p><a href="https://www.linkedin.com/in/allan-glass/" target="_blank">Allan Glass</a></p>
+	</div>
+	<div>
+		<h3>Where I'm From:</h3>
+		<p><a href="https://goo.gl/maps/nEFdYfjJGBqESKZW6" target="_blank">Salem, MA</a></p>
+	</div>
+	<div>
+		<h3>My Major:</h3>
+		<p>Information Management Systems</p>
+	</div>
+	<div>
+		<h3>Web Development Background (<i>two/three sentences</i>):</h3>
+		<p id="para">Over the past twenty plus years, I've served as the Chief Information Officer (CIO) for <a href="https://www.papaper.com/" target="_blank">Pennsylvania Paper & Supply Company</a>. While there, I developed average to advanced back-end programming skills in Visual Basic (ASP.NET), PHP, & SQL. My time at the Harvard Extension School has afforded me the opportunity to hone my front-end programming skills: <a href="http://www.themanassehgroup.com/" target="_blank">My Last Project</a>.</p>
+	</div>
+	<div>
+		<h3>Favorite Place (<i>image</i>):</h3>
+		<a href="https://www.facebook.com/KportPrelude/photos/a.2860132484031275/6165440143500476/" target="_blank">
+			<img src="https://scontent-bos5-1.xx.fbcdn.net/v/t39.30808-6/327406787_3116309748659246_224833133450282512_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a26aad&_nc_ohc=eDU9R7YVEEIAX8GMcEs&tn=AS7DKvkAcQtThOa8&_nc_ht=scontent-bos5-1.xx&oh=00_AfCWxJNzSqjF6JgbC-z6GAecVpEKMjWXr4mltANxZyVLQw&oe=63E170DD" alt="Kennebunk, Maine" width="520">
+		</a>
+		<p>Kennebunk, Maine</p>
+	</div>
+	<div>
+		<h3>Favorite Restaurant (<i>link</i>):</h3>
+		<p><a href="https://www.ruthschris.com/" target="_blank">Ruth's Chris Steak House</a></p>
+	</div>
+	<div>
+		<h3>Newsletter Subscription (<i>form</i>):</h3>
+		<form action="http://www.google.com/" method=get>
+		<fieldset><br>
+			<legend>Required Information To Subscribe</legend>
+			<label for="Name"><strong>First & Last Name</strong>:</label><br>
+			<input type="text" name="Name" size="40"><br><br>
+			<label for="Email"><strong>Email</strong>:</label><br>
+			<input type="text" name="Email" size="40" value=""><br><br>
+			<input type="checkbox" name="Terms" value="Acknowledged">
+			<label for="Terms">I agree to the <a href="https://www.termsandconditionsgenerator.com/" target="_blank">Newsletter Terms & Conditions</a>.</label><br><br>
+			<input type="submit" value="Submit Information"><br><br>
+		</fieldset>
+		</form>
+	</div>
 </body>
 </html>
