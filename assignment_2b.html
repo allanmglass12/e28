@@ -18,6 +18,12 @@
 			text-align: center;
 		}
 
+		.turn {
+			padding-top: 15px;
+			font-size: 40px;
+			padding-bottom: 15px;
+		}
+
 		.board {
 			margin: auto;
 			width: 330px;
@@ -36,12 +42,12 @@
 			padding: 0px;
 		}
 
-		.gameO {
+		.game {
 			display: inline-block;
 			width: 100px;
 			height: 100px;
 			font-size: 90px;
-			color: #FFFFFF;
+			color: #072A40;
 			padding: 0px;
 		}
 
@@ -78,9 +84,10 @@
 	</head>
 <body>
 	<h1>Allan Glass</h1>
-	<h2>Assignment #2</h2>
+	<h2>Assignment #2B</h2>
+	<div class="turn"><b>X</b> Turn</div>
 	<div id="board" class="board"></div>
-	<h3><a href="#" onClick="window.location.reload()">Reload Tic-Tac-Toe Board</a></h3>
+	<h3><a href="#" onClick="window.location.reload()">Restart Game</a></h3>
 
 	<script>
 
@@ -91,7 +98,7 @@
 		for (let i = 0; i < 9; i++) {
 
 			var move_type = moves[Math.floor(Math.random() * 2)]
-			game += "<div id=move" + i + " class=game" + move_type + "><b>" + move_type + "</b></div>";
+			game += "<div id=move" + i + " class=game><b>!</b></div>";
 
 		}
 
