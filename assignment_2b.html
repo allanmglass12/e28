@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 2: Allan Glass</title>
+	<style>
+		a:link, a:visited {
+			color: #072A40;
+		}
+
+		a:hover, a:active {
+			color: #F4144B;
+		}
+
+		html {
+			background-color: #EBEBEB;
+			font-family: Tahoma, Verdana, sans-serif;
+			font-size: 16px;
+			text-align: center;
+		}
+
+		.board {
+			margin: auto;
+			width: 330px;
+			height: 365px;
+			padding: 15px;
+			background-color: #072A40;
+			border: 10px solid #07F3FB;
+		}
+
+		.gameX {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			font-size: 90px;
+			color: #F4144B;
+			padding: 0px;
+		}
+
+		.gameO {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			font-size: 90px;
+			color: #FFFFFF;
+			padding: 0px;
+		}
+
+		#move0, #move2 {
+			border-bottom: 10px solid #07F3FB;
+		}
+
+		#move6, #move8 {
+			border-top: 10px solid #07F3FB;
+		}
+
+		#move1 {
+			border-left: 10px solid #07F3FB;
+			border-bottom: 10px solid #07F3FB;
+			border-right: 10px solid #07F3FB;
+		}
+
+		#move7 {
+			border-left: 10px solid #07F3FB;
+			border-top: 10px solid #07F3FB;
+			border-right: 10px solid #07F3FB;
+		}
+
+		#move4 {
+			border-left: 10px solid #07F3FB;
+			border-right: 10px solid #07F3FB;
+		}
+
+		#move0, #move1, #move2, #move3, #move4, #move5, #move6, #move7, #move8 {
+			padding-bottom: 15px;
+		}
+
+	</style>
+	</head>
+<body>
+	<h1>Allan Glass</h1>
+	<h2>Assignment #2</h2>
+	<div id="board" class="board"></div>
+	<h3><a href="#" onClick="window.location.reload()">Reload Tic-Tac-Toe Board</a></h3>
+
+	<script>
+
+		const moves = ["X", "O"];
+
+		let game = "";
+
+		for (let i = 0; i < 9; i++) {
+
+			var move_type = moves[Math.floor(Math.random() * 2)]
+			game += "<div id=move" + i + " class=game" + move_type + "><b>" + move_type + "</b></div>";
+
+		}
+
+		document.getElementById("board").innerHTML = game;
+
+	</script>
+</body>
+</html>
