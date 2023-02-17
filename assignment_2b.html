@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Assignment 2: Allan Glass</title>
+		<title>Assignment 2B: Allan Glass</title>
 	<style>
 		a:link, a:visited {
 			color: #072A40;
@@ -33,15 +33,6 @@
 			border: 10px solid #07F3FB;
 		}
 
-		.gameX {
-			display: inline-block;
-			width: 100px;
-			height: 100px;
-			font-size: 90px;
-			color: #F4144B;
-			padding: 0px;
-		}
-
 		.game {
 			display: inline-block;
 			width: 100px;
@@ -51,32 +42,50 @@
 			padding: 0px;
 		}
 
-		#move0, #move2 {
+		.squareX {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			font-size: 90px;
+			color: #F4144B;
+			padding: 0px;
+		}
+
+		.squareO {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			font-size: 90px;
+			color: #FFFFFF;
+			padding: 0px;
+		}
+
+		#square0, #square2 {
 			border-bottom: 10px solid #07F3FB;
 		}
 
-		#move6, #move8 {
+		#square6, #square8 {
 			border-top: 10px solid #07F3FB;
 		}
 
-		#move1 {
+		#square1 {
 			border-left: 10px solid #07F3FB;
 			border-bottom: 10px solid #07F3FB;
 			border-right: 10px solid #07F3FB;
 		}
 
-		#move7 {
+		#square7 {
 			border-left: 10px solid #07F3FB;
 			border-top: 10px solid #07F3FB;
 			border-right: 10px solid #07F3FB;
 		}
 
-		#move4 {
+		#square4 {
 			border-left: 10px solid #07F3FB;
 			border-right: 10px solid #07F3FB;
 		}
 
-		#move0, #move1, #move2, #move3, #move4, #move5, #move6, #move7, #move8 {
+		#square0, #square1, #square2, #square3, #square4, #square5, #square6, #square7, #square8 {
 			padding-bottom: 15px;
 		}
 
@@ -85,24 +94,138 @@
 <body>
 	<h1>Allan Glass</h1>
 	<h2>Assignment #2B</h2>
-	<div class="turn"><b>X</b> Turn</div>
+	<div id="move" class="turn"><b>X</b> Turn</div>
 	<div id="board" class="board"></div>
 	<h3><a href="#" onClick="window.location.reload()">Restart Game</a></h3>
 
 	<script>
 
-		const moves = ["X", "O"];
-
 		let game = "";
+		let move = "X";
 
 		for (let i = 0; i < 9; i++) {
 
-			var move_type = moves[Math.floor(Math.random() * 2)]
-			game += "<div id=move" + i + " class=game><b>!</b></div>";
+			game += "<div id=square" + i + " class=game onClick=square(" + i + ")>#</div>";
 
 		}
 
 		document.getElementById("board").innerHTML = game;
+
+
+	function square(i) {
+
+		if (document.getElementById("square" + i + "").innerHTML == "#" && document.getElementById("move").innerHTML == "<b>X</b> Turn" || document.getElementById("square" + i + "").innerHTML == "#" && document.getElementById("move").innerHTML == "<b>O</b> Turn") {
+
+		document.getElementById("square" + i + "").innerHTML = "<b>" + move + "</b>";
+		document.getElementById("square" + i + "").className = "square" + move + "";
+
+		if (move == "X") {
+			move = "O";
+			} else {
+			move = "X";
+		}
+
+		document.getElementById("move").innerHTML = "<b>" + move + "</b> Turn";
+		winner();
+
+		}
+	}
+
+
+	function winner() {
+
+	if (document.getElementById("square0").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square1").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square2").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square3").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square5").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square6").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square7").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square8").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square0").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square3").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square6").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square1").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square7").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square2").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square5").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square8").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square0").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square8").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square2").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>X</b>" &&
+	 document.getElementById("square6").innerHTML == "<b>X</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>X</u> WINNER!</b>";}
+
+	else if (document.getElementById("square0").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square1").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square2").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square3").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square5").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square6").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square7").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square8").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square0").innerHTML == "<b>O</b>" &&
+	document.getElementById("square3").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square6").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square1").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square7").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square2").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square5").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square8").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square0").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square8").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square2").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square4").innerHTML == "<b>O</b>" &&
+	 document.getElementById("square6").innerHTML == "<b>O</b>")
+	 {document.getElementById("move").innerHTML = "<b><u>O</u> WINNER!</b>";}
+
+	else if (document.getElementById("square0").innerHTML !== "#" &&
+	 document.getElementById("square1").innerHTML !== "#" &&
+	 document.getElementById("square2").innerHTML !== "#" &&
+	 document.getElementById("square3").innerHTML !== "#" &&
+	 document.getElementById("square4").innerHTML !== "#" &&
+	 document.getElementById("square5").innerHTML !== "#" &&
+	 document.getElementById("square6").innerHTML !== "#" &&
+	 document.getElementById("square7").innerHTML !== "#" &&
+	 document.getElementById("square8").innerHTML !== "#")
+	 {document.getElementById("move").innerHTML = "<b>X O <u>DRAW</u>!</b>";}
+
+	}
 
 	</script>
 </body>
